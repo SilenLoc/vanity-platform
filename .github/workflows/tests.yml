@@ -25,3 +25,6 @@ jobs:
 
       - name: check 
         run:  ./gradlew check --no-daemon
+        env:
+          GITHUB_USERNAME: SilenLoc
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
