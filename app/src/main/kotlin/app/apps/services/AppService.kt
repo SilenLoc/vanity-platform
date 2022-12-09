@@ -7,21 +7,27 @@ import vanity.app.view.platformview.apps.applications.elbishtranslator.ExampleAp
 
 class AppService : IAppService {
 
-  override val javaFxAppModules: Collection<JavaFxAppModule>
-    get() = listOf(
-      JavaFxAppModule(
-        "Fantasy",
-        listOf(
-          ElbishTranslator(),
-          ExampleApp("NameGenerator")
+    override val javaFxAppModules: Collection<JavaFxAppModule>
+        get() = listOf(
+                JavaFxAppModule(
+                        "Fantasy",
+                        listOf(
+                                ElbishTranslator(),
+                                ExampleApp("NameGenerator")
+                        )
+                ),
+                JavaFxAppModule(
+                        "Dev",
+                        listOf(
+                                ExampleApp("Just Just")
+                        )
+                ),
+                JavaFxAppModule(
+                        "Dev",
+                        listOf(
+                                ExampleApp("Just Just")
+                        )
+                ),
         )
-      ),
-      JavaFxAppModule(
-        "Dev",
-        listOf(
-          ExampleApp("Just Just")
-        )
-      ),
-    )
 
 }

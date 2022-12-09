@@ -17,5 +17,4 @@ check:
 
 
 run:
-    ./gradlew --stop
     ./gradlew run
