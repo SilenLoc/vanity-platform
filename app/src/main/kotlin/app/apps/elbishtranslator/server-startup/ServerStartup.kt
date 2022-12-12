@@ -9,21 +9,19 @@ object ServerStartup {
     suspend fun startServer(path: String) {
         downloadServer(path)
 
-
-
     }
 
     suspend fun downloadServer(path: String) {
         while (serverDownloadState !is ServerReadyToStart) {
             when (serverDownloadState) {
                 is ServerNotAround -> downloadServer()
-                is ServerDownloading -> wait()
+                is ServerDownloading -> waitForDownloadFinsihed()
             }
         }
     }
 
     private fun downloadServer() {}
-    private fun wait() {}
+    private fun waitForDownloadFinsihed() {}
 
 
 }
