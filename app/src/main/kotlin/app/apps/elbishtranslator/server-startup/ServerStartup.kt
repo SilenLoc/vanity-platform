@@ -15,13 +15,13 @@ object ServerStartup {
         while (serverDownloadState !is ServerReadyToStart) {
             when (serverDownloadState) {
                 is ServerNotAround -> downloadServer()
-                is ServerDownloading -> waitForDownloadFinsihed()
+                is ServerDownloading -> waitForDownloadFinished()
             }
         }
     }
 
     private fun downloadServer() {}
-    private fun waitForDownloadFinsihed() {}
+    private fun waitForDownloadFinished() {}
 
 
 }
