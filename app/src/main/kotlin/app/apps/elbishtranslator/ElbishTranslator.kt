@@ -6,14 +6,13 @@ import vanity.app.view.platformview.apps.JavaFxApp
 
 
 
-private val ELBISH_TRANS_SERVER =  "elibsh_trans_server"
-
+val ELBISH_TRANS_SERVER =  "elibsh_trans_server"
 
 
 class ElbishTranslator: JavaFxApp {
 
     override val name: String = "Elbish Translator"
-    override val node: Node = Label(name)
+    override val node: Node = ElbishTranslatorNode()
 
 }
 
