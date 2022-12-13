@@ -15,7 +15,7 @@ class ElbishTranslatorNode : BorderPane() {
     init {
         startBtn.cssBtnGreyAndGreen()
         startBtn.action {
-            val serverStartup = ServerStartup( "http://localhost:8080/")
+            val serverStartup = ServerStartup()
 
             GlobalScope.launch {
                 serverStartup.tryStartServer()

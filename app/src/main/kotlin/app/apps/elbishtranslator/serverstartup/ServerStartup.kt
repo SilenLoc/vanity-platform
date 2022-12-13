@@ -1,14 +1,13 @@
+import app.apps.elbishtranslator.client.Client
+import app.apps.elbishtranslator.client.URLS
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import vanity.app.Log
 import vanity.app.results.*
-import java.net.URI
-import java.net.http.HttpClient
-import java.net.http.HttpRequest
-import java.net.http.HttpResponse
 
-class ServerStartup(private val serverURL: String) {
+
+class ServerStartup() {
 
 
     suspend fun tryStartServer() {
@@ -25,17 +24,14 @@ class ServerStartup(private val serverURL: String) {
 
     private var tries = 0
     private suspend fun probeServer(): WellOrUnfit<WellOrUnfit<String, String>, String> {
-        val client = HttpClient.newBuilder().build()
-        val request = HttpRequest.newBuilder().uri(URI.create(serverURL + "ready")).build()
-
         var result: WellOrUnfit<WellOrUnfit<String, String>, String> = Unfit("not reachable")
 
         while (result is Unfit) {
             val response = withContext(Dispatchers.IO) {
-                client.send(request, HttpResponse.BodyHandlers.ofString())
+                Client.get(URLS.ready)
             }
 
-            if (response.statusCode() == 200) {
+            if (response.status.successful) {
                 result = Well(Well("server ready"))
             }
 
