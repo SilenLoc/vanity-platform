@@ -36,7 +36,7 @@ dependencies {
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-javafx:1.6.4")
 
-  val koinVersion = "3.2.2"
+  val koinVersion = "3.3.0"
   implementation("io.insert-koin:koin-core:$koinVersion")
 
   testImplementation("io.kotest:kotest-runner-junit5:5.5.4")
