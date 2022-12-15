@@ -1,5 +1,6 @@
-package app.apps.elbishtranslator
+package app.apps.elbishtranslator.frontend
 
+import app.apps.elbishtranslator.frontend.ui.ElbishTranslatorNode
 import javafx.scene.Node
 import javafx.scene.control.Label
 import vanity.app.view.platformview.apps.JavaFxApp

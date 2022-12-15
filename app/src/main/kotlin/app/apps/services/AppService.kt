@@ -1,9 +1,9 @@
-package vanity.app.apps.services
+package app.apps.services
 
 import vanity.app.IAppService
 import vanity.app.JavaFxAppModule
-import app.apps.elbishtranslator.ElbishTranslator
-import app.apps.elbishtranslator.ExampleApp
+import app.apps.elbishtranslator.frontend.ElbishTranslator
+import app.apps.elbishtranslator.frontend.ExampleApp
 
 class AppService : IAppService {
 

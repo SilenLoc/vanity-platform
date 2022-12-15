@@ -1,5 +1,6 @@
-import app.apps.elbishtranslator.client.Client
-import app.apps.elbishtranslator.client.URLS
+package app.apps.elbishtranslator.frontend.serverstartup
+
+import app.apps.elbishtranslator.frontend.init.ElbishApp
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
@@ -7,8 +8,9 @@ import vanity.app.Log
 import vanity.app.results.*
 
 
-class ServerStartup() {
+class ServerStartup {
 
+    private val client get() = ElbishApp.getContext().client
 
     suspend fun tryStartServer() {
         Log.info { "try connecting" }
@@ -28,10 +30,10 @@ class ServerStartup() {
 
         while (result is Unfit) {
             val response = withContext(Dispatchers.IO) {
-                Client.get(URLS.ready)
+                client.maintenance.isServerReady()
             }
 
-            if (response.status.successful) {
+            if (response) {
                 result = Well(Well("server ready"))
             }
 
