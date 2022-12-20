@@ -9,7 +9,7 @@ import org.koin.dsl.module
 import vanity.app.IAppService
 import vanity.app.Vanity
 import vanity.app.VanityChest
-import vanity.app.apps.services.AppService
+import app.apps.services.AppService
 
 suspend fun main() = withContext(Dispatchers.JavaFx) {
 

@@ -1,6 +1,6 @@
 mod routeselb;
 
-use crate::routeselb::{example, translate};
+use crate::routeselb::{example, ready, translate};
 use actix_web::{get, middleware, post, web, App, HttpResponse, HttpServer, Responder};
 
 #[actix_web::main]
@@ -14,6 +14,7 @@ async fn main() -> std::io::Result<()> {
             .wrap(middleware::Logger::default())
             .service(example)
             .service(translate)
+            .service(ready)
     })
     .bind(("127.0.0.1", 8080))?
     .run()

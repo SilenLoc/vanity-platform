@@ -75,6 +75,11 @@ pub async fn example() -> impl Responder {
     HttpResponse::Ok().body(TransReq::example())
 }
 
+#[get("/ready")]
+pub async fn ready() -> impl Responder {
+    HttpResponse::Ok().body("ready to response")
+}
+
 pub fn translate_content(content: &String) -> Result<TransResponse, TransErr> {
     match content.as_str() {
         "" => Err(TransErr::new("Blank translation content")),

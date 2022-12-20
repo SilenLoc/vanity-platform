@@ -1,13 +1,19 @@
-package vanity.app.view.platformview.apps.applications.elbishtranslator
+package app.apps.elbishtranslator.frontend
 
+import app.apps.elbishtranslator.frontend.ui.ElbishTranslatorNode
 import javafx.scene.Node
 import javafx.scene.control.Label
 import vanity.app.view.platformview.apps.JavaFxApp
 
-class ElbishTranslator() : JavaFxApp {
+
+
+val ELBISH_TRANS_SERVER =  "elibsh_trans_server"
+
+
+class ElbishTranslator: JavaFxApp {
 
     override val name: String = "Elbish Translator"
-    override val node: Node = Label(name)
+    override val node: Node = ElbishTranslatorNode()
 
 }
 
