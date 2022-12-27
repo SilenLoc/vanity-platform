@@ -42,7 +42,7 @@ dependencies {
   testImplementation("io.kotest:kotest-runner-junit5:5.5.4")
 
   implementation("org.http4k:http4k-core:4.34.3.1")
-  implementation("org.http4k:http4k-client-apache:4.34.3.1")
+  implementation("org.http4k:http4k-client-apache:4.35.2.0")
 }
 repositories {
   mavenCentral()
